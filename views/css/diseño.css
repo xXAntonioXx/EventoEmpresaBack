@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+* {margin:0; padding:0; font-family:'Montserrat';}
+
+body {background:#EEEDED;}
+
+.menu_bar{display: none;}
+
+
+header nav {width: 100%; background:#1C9E02;  position:fixed; opacity: 0.9;}
+header nav ul li span {margin-right: 5px}
+header nav ul li a:hover {background:#23BB04;}
+nav ul {list-style:none; margin:0;}
+nav ul li {float:left; width: 16.6666666666%;}
+nav ul li a {padding:20px 20px; display:block; text-decoration: none; color:#fff; min-width:10%; font-family: 'Montserrat', sans-serif;}
+@media screen and (max-width:900px) {
+  header nav {width: 70%; height: 100%; left: -100%; margin: 90px 0px; position:fixed;}
+
+  header nav ul li{display: block; float: none; border-bottom:1px solid rgba(255,255,255, .3); width: 100%;}
+
+  .menu_bar{display: block; width: 100%; background:#1C9E02; opacity: .95; position: fixed;}
+
+  .menu_bar .boton-menu{display: block; margin: 0px; padding: 20px; color:#fff;text-decoration: none;font-size: 25px; font-family: 'Montserrat'}
+
+  .menu_bar span {float: right; font-size: 40px;}
+}
+
+
+
+.dias li {color:#fff; background:#072EBF; float:left; width: 18%; border:2px solid #fff; }
+.dias li {margin: 0% 0.49999% ; max-width: 20%; overflow:hidden;}
+.dia {color:#fff; background: #072EBF; padding: 10px 10px; width: 100%; text-align: center; font-family: 'Montserrat', sans-serif; display: inline-block;}
+.dia:active {background:#2852F0;}
+
+.ImagenEvento {width: 100%; height: auto;}
+.fecha {background:#05fe7e; color:#fff; margin:5% 0px; border:2px solid #fff; padding:5% 10%; text-align:center; font-family:'Montserrat';}
+.A {background:#05fe7e; font-family: 'Montserrat';}
+
+.caja2 {display: grid; grid-template-columns:auto auto auto; justify-content:space-evenly;}
+.caja2 img {border:2px solid grey; width:70%; box-shadow:0px 0px 10px black; margin-left:15%; margin-right:15%;}
+.caja2 p {text-align:center; color:#000000;}
+
+.caja3 {background:#072EBF; color:#fff; border:2px solid #fff;}
+.caja3 h1 {text-align:center; border:2px solid #fff;}
+.caja3 table div {color:#fff; border:2px solid #fff; padding:20px 80px;}
+
+.cajaD {display:grid; grid-template-columns: auto auto auto;}
+.cajaD div {border:2px solid #fff;}
+.cajaD .Ho, .Co, .Ta {background:#2852F0; text-align:center; font-family: 'Montserrat';}
+.cajaD .d {display:grid; grid-template-columns: auto auto auto; font-family: 'Montserrat';}
+.cajaD .horario {font-family: 'Montserrat';}
+
+.Exp {background: #D50720; border: 2px solid #D2CBCB;}
+.expositores {background: #6240FD; display: grid; grid-template-columns: auto auto auto;}
+.datos, .expo{overflow:hidden; float:left; max-width: 50%;}
+div img {border: 2px solid #DBDBDD;}
+div .TiEx {color: #fff;}
+
+form {background:#B4D9F3; width: 55%; border: 2px solid #5196F9;}
+label {}
+input[ type="submit"] {width: 60%; background: #fff; position: relative;}
+
+.Contacto {background: #0EDE53; border: 2px solid #0EAFDE; overflow:hidden; }
+.Contacto img {float: left;}
+.Contacto ul li {overflow:hidden; max-width: 100%;}
+
+h1 {text-align:center;}
+
+div, h1 {padding:10px 10px;}
+
+.footer {background: #000000; color: #fff;}
+
+p {margin:10px 10px;}
