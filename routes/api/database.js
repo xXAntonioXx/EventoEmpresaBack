@@ -23,6 +23,7 @@ app.post('/nuevoRegistro',[
         //res.redirect('/');
     }else{
         console.log("todo en orden");
+        
         let encryptObject = `${req.body['Nombre']}|${req.body['Correo']}|${req.body['Dependencia']}`;
         bcrypt.hash(encryptObject,5,(err,hash)=>{
             if (err){console.log("Errir al generar hash")};
