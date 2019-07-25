@@ -19,8 +19,9 @@ app.post('/nuevoRegistro',[
     let errors = validationResult(req);
     if (!errors.isEmpty()) {
         console.log(errors.array())
-        res.send(errors.isEmpty())
-        //res.redirect('/');
+        res.set('error',['este es un error']);
+        // res.send(errors.isEmpty())
+        res.redirect('/');
     }else{
         console.log("todo en orden");
         

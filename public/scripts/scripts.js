@@ -1,3 +1,9 @@
+var req = new XMLHttpRequest();
+req.open('GET', document.location, false);
+req.send(null);
+var headers = req.getAllResponseHeaders().toLowerCase();
+alert(headers);
+
 var dias = ["lunes","martes","miercoles"];
 let d = new Date();
 
