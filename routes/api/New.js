@@ -14,14 +14,21 @@ app.post('/nuevoRegistro',[
     check('Correo').isEmail(),
     check('Edad').isNumeric(),
     check('Expediente').isNumeric(),
-    check('Dependencia').matches(/^[\s\da-zA-ZñáéíóúÁÉÍÓÚüÜ]+$/)
+    check('Dependencia').matches(/^[\s\da-zA-ZñáéíóúÁÉÍÓÚüÜ]+$/),
+    check('Comentario').matches(/^[\s\da-zA-ZñáéíóúÁÉÍÓÚüÜ]+$/),
 ],(req,res)=>{
     let errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        console.log(errors.array())
-        res.set('error',['este es un error']);
-        // res.send(errors.isEmpty())
-        res.redirect('/');
+
+    if (!errors.isEmpty()){
+        console.log("se registró con errores");
+        let erroresEncontrados = errors.array().map((obj)=>{
+            return `${obj['param']}Err=valor+no+valido&`;
+
+        }).join('').slice(0,-1);
+
+        let urlConErrores = `/?${erroresEncontrados}`
+        res.redirect(urlConErrores);
+
     }else{
         console.log("todo en orden");
         
@@ -30,7 +37,6 @@ app.post('/nuevoRegistro',[
             if (err){console.log("Errir al generar hash")};
             res.send(`tu hash para qr es ${hash}`);
         });
-        //res.send(errors.isEmpty());
     }
 });
 

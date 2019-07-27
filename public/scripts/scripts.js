@@ -1,8 +1,5 @@
-var req = new XMLHttpRequest();
-req.open('GET', document.location, false);
-req.send(null);
-var headers = req.getAllResponseHeaders().toLowerCase();
-alert(headers);
+let url = window.location.href.split('?');
+redirectConfirm(url);
 
 var dias = ["lunes","martes","miercoles"];
 let d = new Date();
@@ -33,4 +30,28 @@ function mostrarPreguntas(value){
         document.getElementById("unisonForm").style.display = "none";
         document.getElementById("noUnisonForm").style.display = "block";
     }
+}
+
+function redirectConfirm(url){
+    let parametros = url[1];
+
+    if(!parametros){return;}
+
+    let parametrosArray = parametros.split('&');
+
+    parametrosArray.forEach(element => {
+        let idError = element.split("=")[0]
+        console.log(idError);
+        document.getElementById(idError).style.display = "inline";
+
+    });
+}
+
+function validation(){
+    if(document.getElementById("chkAlumnoNoAlumno").checked){
+        document.getElementById("inpDependencia").value = "Universidad de Sonora";
+    }else{
+        document.getElementById("inpExpediente").value = 0;
+    }
+    return false;
 }
