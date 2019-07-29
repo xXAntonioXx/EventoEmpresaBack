@@ -14,6 +14,12 @@ document.getElementById("unisonForm").style.display = "none";
 
 document.getElementById(dias[d.getDay()-1]).style.display="grid";
 
+document.getElementById("rdManGender").checked=true;
+
+document.getElementById("NombreFaltaErr").style.display =  "none";
+document.getElementById("CorreoFaltaErr").style.display = "none";
+document.getElementById("EdadFaltaErr").style.display = "none";
+
 function mostrarDia(diaNum){
     document.getElementById("lunes").style.display="none";
     document.getElementById("martes").style.display="none";
@@ -50,8 +56,28 @@ function redirectConfirm(url){
 function validation(){
     if(document.getElementById("chkAlumnoNoAlumno").checked){
         document.getElementById("inpDependencia").value = "Universidad de Sonora";
+        document.getElementById("inpExpediente").value = undefined;
+
     }else{
+        document.getElementById("inpDependencia").value = "";
         document.getElementById("inpExpediente").value = 0;
+
+    }
+    if(!document.getElementById("txaComentario").value){
+        document.getElementById("txaComentario").value="Sin comentarios";
+
+    }
+
+    if(!document.getElementById("impNombre").value || !document.getElementById("inpCorreo").value || !document.getElementById("inpEdad").value || (!document.getElementById("inpEdad").value || !document.getElementById("ExpedienteFaltaErr").value)){
+        document.getElementById("NombreFaltaErr").style.display = !document.getElementById("impNombre").value ? "block" : "none";
+        document.getElementById("CorreoFaltaErr").style.display = !document.getElementById("inpCorreo").value ? "block" : "none";
+        document.getElementById("EdadFaltaErr").style.display = !document.getElementById("inpEdad").value ? "block" : "none";
+        if(!document.getElementById("inpEdad").value) || !document.getElementById("ExpedienteFaltaErr").value){
+
+        }
+        return false;
+
     }
     return false;
+
 }

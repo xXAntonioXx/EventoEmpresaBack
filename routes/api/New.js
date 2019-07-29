@@ -10,12 +10,12 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 app.post('/nuevoRegistro',[
-    check('Nombre').matches(/^[\sa-zA-ZñáéíóúÁÉÍÓÚüÜ]+$/),
+    check('Nombre').matches(/^[\sa-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$/),
     check('Correo').isEmail(),
     check('Edad').isNumeric(),
     check('Expediente').isNumeric(),
-    check('Dependencia').matches(/^[\s\da-zA-ZñáéíóúÁÉÍÓÚüÜ]+$/),
-    check('Comentario').matches(/^[\s\da-zA-ZñáéíóúÁÉÍÓÚüÜ]+$/),
+    check('Dependencia').matches(/^[\s\da-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$/),
+    check('Comentario').matches(/^[\s\da-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$/),
 ],(req,res)=>{
     let errors = validationResult(req);
 

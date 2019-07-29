@@ -478,31 +478,35 @@
         <label for="Dependencia">¿De que dependencia/escuela/instituto eres?</label>
         <input type="text" id="inpDependencia" name="Dependencia" placeholder="---">
         <label id="DependenciaErr" style="color:red;display: none;">El nombre de dependecia solo pueden ser letras y números</label>
+        <label id="DependenciaFaltaErr" style="color:red;display: none;">El nombre del Instituto</label>
       </div>
 
       <div><label for="Nombre">Escribe tú nombre.</label>
-        <input type="text" id="Nombre" name="Nombre" placeholder="Nombre completo.">
+        <input type="text" id="impNombre" name="Nombre" placeholder="Nombre completo.">
         <label id="NombreErr" style="color:red;display: none;">El nombre solo puede llevar letras</label>
+        <label id="NombreFaltaErr" style="color:red;display: none;">El Nombre es necesario</label>
       </div>
 
       <div><label for="Correo">¿Cuál es tu correo electrónico?</label>
-        <input type="text" id="Correo" name="Correo" placeholder="aaaa@email.com">
+        <input type="text" id="inpCorreo" name="Correo" placeholder="aaaa@email.com">
         <label id="CorreoErr" style="color:red;display: none;">Ejemplo de un correo válido: "nombre@dominio.com"</label>
+        <label id="CorreoFaltaErr" style="color:red;display: none;">El Correo es necesario</label>
       </div>
 
       <div></div>
 
       <div><label for="sexo">Sexo:</label>
-        <input type="radio" name="genero" value="Hombre">Hombre.
-        <input type="radio" name="genero" value="Mujer">Mujer.</div>
+        <input type="radio" id="rdManGender" name="genero" value="Hombre">Hombre.
+        <input type="radio" id="rdWomGender" name="genero" value="Mujer">Mujer.</div>
 
       <div><label for="Edad">Edad:</label>
-        <input type="text" id="Edad" name="Edad" placeholder="---" maxlength="3">
+        <input type="text" id="inpEdad" name="Edad" placeholder="---" maxlength="3">
         <label id="EdadErr" style="color:red;display: none;">La edad solo deben ser números</label>
+        <label id="EdadFaltaErr" style="color:red;display: none;">La edad es necesaria</label>
       </div>
 
       <div><label for="Comentario">¿Cómo te enteraste del evento?</label><br>
-        <textarea id="Comentario" name="Comentario" placeholder="---"></textarea>
+        <textarea id="txaComentario" name="Comentario" placeholder="---"></textarea>
         <label id="ComentarioErr" style="color:red;display: none">El comentario solo puede llevar letras y números</label>
       </div>
 
