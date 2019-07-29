@@ -68,13 +68,11 @@ function validation(){
 
     }
 
-    if(!document.getElementById("impNombre").value || !document.getElementById("inpCorreo").value || !document.getElementById("inpEdad").value || (!document.getElementById("inpEdad").value || !document.getElementById("ExpedienteFaltaErr").value)){
+    if(!document.getElementById("impNombre").value || !document.getElementById("inpCorreo").value || !document.getElementById("inpEdad").value){
         document.getElementById("NombreFaltaErr").style.display = !document.getElementById("impNombre").value ? "block" : "none";
         document.getElementById("CorreoFaltaErr").style.display = !document.getElementById("inpCorreo").value ? "block" : "none";
         document.getElementById("EdadFaltaErr").style.display = !document.getElementById("inpEdad").value ? "block" : "none";
-        if(!document.getElementById("inpEdad").value) || !document.getElementById("ExpedienteFaltaErr").value){
-
-        }
+        
         return false;
 
     }
