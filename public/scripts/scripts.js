@@ -56,10 +56,8 @@ function redirectConfirm(url){
 function validation(){
     if(document.getElementById("chkAlumnoNoAlumno").checked){
         document.getElementById("inpDependencia").value = "Universidad de Sonora";
-        document.getElementById("inpExpediente").value = undefined;
 
     }else{
-        document.getElementById("inpDependencia").value = "";
         document.getElementById("inpExpediente").value = 0;
 
     }
@@ -68,12 +66,21 @@ function validation(){
 
     }
 
-    if(!document.getElementById("impNombre").value || !document.getElementById("inpCorreo").value || !document.getElementById("inpEdad").value || (!document.getElementById("ExpedienteFaltaErr").value || !document.getElementById("DependenciaFaltaErr").value)){
+    if(!document.getElementById("impNombre").value || !document.getElementById("inpCorreo").value || !document.getElementById("inpEdad").value){
         document.getElementById("NombreFaltaErr").style.display = !document.getElementById("impNombre").value ? "inline" : "none";
         document.getElementById("CorreoFaltaErr").style.display = !document.getElementById("inpCorreo").value ? "inline" : "none";
         document.getElementById("EdadFaltaErr").style.display = !document.getElementById("inpEdad").value ? "inline" : "none";
-        document.getElementById("ExpedienteFaltaErr").style.display = !document.getElementById("ExpedienteFaltaErr").value ? "inline" : "none";
-        document.getElementById("DependenciaFaltaErr").style.display = !document.getElementById("DependenciaFaltaErr").value ? "inline" : "none";
+
+        if(!document.getElementById("inpExpediente").value){
+            document.getElementById("ExpedienteFaltaErr").style.display = !document.getElementById("ExpedienteFaltaErr").value ? "inline" : "none";
+
+        }
+
+        if(!document.getElementById("inpDependencia").value){
+            document.getElementById("DependenciaFaltaErr").style.display = !document.getElementById("DependenciaFaltaErr").value ? "inline" : "none";
+
+        }
+
         document.getElementById("txaComentario").value = "";
         document.getElementById("inpExpediente").value = "";
         return false;

@@ -30,7 +30,7 @@ app.post('/nuevoRegistro',[
         res.redirect(urlConErrores);
 
     }else{
-        console.log("todo en orden");
+        console.log(req.body);
         
         let encryptObject = `${req.body['Nombre']}|${req.body['Correo']}|${req.body['Dependencia']}`;
         bcrypt.hash(encryptObject,5,(err,hash)=>{
