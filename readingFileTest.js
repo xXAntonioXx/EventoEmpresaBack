@@ -1,7 +1,11 @@
 const fs = require('fs');
 
-fs.readFile('./views/mail/ticket.html',"utf8",(err,data)=>{
-    if(err){console.log(err)}
-    let afterParametersMail = data.replace("%tagHash%","$2b$05$Cqok7Ze.aOxg9gkq7BSVmO3mQfI2j4/jl64nolRnToQIeDnNIThGO");
-    console.log(afterParametersMail);
-});
+let parametros = {}
+
+function obtenerMail(asistente,hash){
+    let mail = fs.readFileSync('./views/mail/ticket.html','utf8');
+    let mailPrimerParam = mail.replace('@asistente@',asistente);
+    let mailSegundoParam = mailPrimerParam.replace('@asistente@',asistente);
+    return mailBuffer;
+}
+console.log(obtenerMail());
