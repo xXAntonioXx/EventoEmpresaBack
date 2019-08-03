@@ -35,7 +35,7 @@ app.post('/nuevoRegistro',[
         let encryptObject = `${req.body['Nombre']}|${req.body['Correo']}|${req.body['Dependencia']}`;
         bcrypt.hash(encryptObject,5,(err,hash)=>{
             if (err){console.log("Errir al generar hash")};
-            res.send(`tu hash para qr es ${hash}`);
+            res.send(`ingresa a https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${hash}`);
         });
     }
 });
