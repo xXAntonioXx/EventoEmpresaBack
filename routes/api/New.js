@@ -3,6 +3,7 @@ const dbInstance = require('../../lib/database/connection');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
+const mail = require('../../services/mail/sendMail');
 
 const app = express.Router();
 
@@ -16,7 +17,7 @@ app.post('/nuevoRegistro',[
     check('Expediente').isNumeric(),
     check('Dependencia').matches(/^[\s\da-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$/),
     check('Comentario').matches(/^[\s\da-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$/),
-],(req,res)=>{
+],async (req,res)=>{
     let errors = validationResult(req);
 
     if (!errors.isEmpty()){
@@ -33,10 +34,10 @@ app.post('/nuevoRegistro',[
         console.log(req.body);
         
         let encryptObject = `${req.body['Nombre']}|${req.body['Correo']}|${req.body['Dependencia']}`;
-        bcrypt.hash(encryptObject,5,(err,hash)=>{
-            if (err){console.log("Errir al generar hash")};
-            res.send(`ingresa a https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${hash}`);
-        });
+        let hash = bcrypt.hashSync(encryptObject,5,);
+        console.log(hash);
+        console.log("todo fine");
+        mail.enviarMail(req.body['Nombre'],hash);
     }
 });
 
