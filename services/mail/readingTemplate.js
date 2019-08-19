@@ -12,8 +12,10 @@ function obtenerMail(asistente,hash){
     mailBuffer = mail.replace(/(@asistente@)|(@tagHash@)/g,(param)=>{
         return parametros[param];
     });
-    // let mailPrimerParam = mail.replace('@asistente@',asistente);
-    // let mailSegundoParam = mailPrimerParam.replace('@asistente@',asistente);
+    
     return mailBuffer;
 }
-console.log(obtenerMail('sherlock holmes','jasdlkfjakljdfajsdfljadñjalkfj'));
+
+module.exports = {
+    obtenerMail:obtenerMail
+}

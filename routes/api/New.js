@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 const mail = require('../../services/mail/sendMail');
+const emailTemplate = require('../../services/mail/readingTemplate');
 
 const app = express.Router();
 
@@ -31,13 +32,14 @@ app.post('/nuevoRegistro',[
         res.redirect(urlConErrores);
 
     }else{
-        console.log(req.body);
+        let nombre = req.body['Nombre'];
+        let correo = req.body['Correo'];
         
-        let encryptObject = `${req.body['Nombre']}|${req.body['Correo']}|${req.body['Dependencia']}`;
+        let encryptObject = `${nombre}|${correo}|${req.body['Dependencia']}`;
         let hash = bcrypt.hashSync(encryptObject,5,);
-        console.log(hash);
-        console.log("todo fine");
-        mail.enviarMail(req.body['Nombre'],hash);
+        let mailTemplate = emailTemplate.obtenerMail(nombre,hash);
+        mail.enviarMail(correo,mailTemplate);
+        res.redirect('/');
     }
 });
 

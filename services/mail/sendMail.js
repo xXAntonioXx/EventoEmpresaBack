@@ -11,14 +11,14 @@ const transporter = nodemailer.createTransport({
 let mailOptions = {
     from: '	rocker4nt0n10@gmail.com',
     to: 'jose_antony11@hotmail.com',
-    subject: 'Esto es una prueba desde Node.js',
-    text: 'Esto es una prueba de mi poder D:'
+    subject: 'Registro de asistencia al encuentro de empresas para ing. en sistemas',
+    html: 'empty mail'
   };
 
   
-function enviarMail(mensaje,direccion){
-    mailOptions['text'] = mensaje;
-    mailOptions['subject'] = direccion;
+function enviarMail(direccion,template){
+    mailOptions['to'] = direccion;
+    mailOptions['html'] = template;
 
     transporter.sendMail(mailOptions,function(err,info){
         if(err){
