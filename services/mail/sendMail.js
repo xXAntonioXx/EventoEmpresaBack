@@ -22,7 +22,7 @@ function enviarMail(direccion,template){
 
     transporter.sendMail(mailOptions,function(err,info){
         if(err){
-            console.log("sucedio un error");
+            console.log("sucedio un error al enviar mail");
             console.log(err);
         }else{
             console.log("revisa la bandeja de outlook");

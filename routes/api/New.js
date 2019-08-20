@@ -1,10 +1,10 @@
 const express = require('express');
-const dbInstance = require('../../lib/database/connection');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 const mail = require('../../services/mail/sendMail');
 const emailTemplate = require('../../services/mail/readingTemplate');
+const db = require('../../services/database/database');
 
 const app = express.Router();
 
@@ -18,7 +18,7 @@ app.post('/nuevoRegistro',[
     check('Expediente').isNumeric(),
     check('Dependencia').matches(/^[\s\da-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$/),
     check('Comentario').matches(/^[\s\da-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$/),
-],async (req,res)=>{
+],(req,res)=>{
     let errors = validationResult(req);
 
     if (!errors.isEmpty()){
@@ -39,6 +39,10 @@ app.post('/nuevoRegistro',[
         let hash = bcrypt.hashSync(encryptObject,5,);
         let mailTemplate = emailTemplate.obtenerMail(nombre,hash);
         mail.enviarMail(correo,mailTemplate);
+
+        let asistenteObjCadena = JSON.stringify(req.body);
+        db.agregarNuevoAsistente(asistenteObjCadena,hash);
+        
         res.redirect('/');
     }
 });
