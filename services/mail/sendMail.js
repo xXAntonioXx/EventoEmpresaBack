@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const emailTemplate = require('./readingTemplate');
 
 const transporter = nodemailer.createTransport({
     service:'SendGrid',
@@ -16,9 +17,9 @@ let mailOptions = {
   };
 
   
-function enviarMail(direccion,template){
+function enviarMail(direccion,nombre,hash){
     mailOptions['to'] = direccion;
-    mailOptions['html'] = template;
+    mailOptions['html'] = emailTemplate.obtenerMail(nombre,hash);
 
     transporter.sendMail(mailOptions,function(err,info){
         if(err){

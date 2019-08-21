@@ -1,9 +1,8 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
+const bcrypt = require('bcrypt');
 const mail = require('../../services/mail/sendMail');
-const emailTemplate = require('../../services/mail/readingTemplate');
 const db = require('../../services/database/database');
 
 const app = express.Router();
@@ -31,20 +30,20 @@ app.post('/nuevoRegistro',[
         let urlConErrores = `/?${erroresEncontrados}`
         res.redirect(urlConErrores);
 
-    }else{
-        let nombre = req.body['Nombre'];
-        let correo = req.body['Correo'];
-        
-        let encryptObject = `${nombre}|${correo}|${req.body['Dependencia']}`;
-        let hash = bcrypt.hashSync(encryptObject,5,);
-        let mailTemplate = emailTemplate.obtenerMail(nombre,hash);
-        mail.enviarMail(correo,mailTemplate);
-
-        let asistenteObjCadena = JSON.stringify(req.body);
-        db.agregarNuevoAsistente(asistenteObjCadena,hash);
-        
-        res.redirect('/');
     }
+    let correo = req.body['Correo'];
+    let nombre = req.body['Nombre'];
+    let dependencia = req.body['Dependencia'];
+    let asistenteObjCadena = JSON.stringify(req.body);
+        
+    let encryptObject = `${nombre}|${correo}|${dependencia}`;
+    let hash = bcrypt.hashSync(encryptObject,5);
+
+    mail.enviarMail(correo,nombre,hash);
+    db.agregarNuevoAsistente(asistenteObjCadena,hash);
+        
+    res.redirect('/');
+    
 });
 
 module.exports = app;
