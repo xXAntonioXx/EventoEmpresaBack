@@ -8,6 +8,13 @@ function agregarNuevoAsistente(bodyRequest,hash){
     instance.insertarUno('asistentes',asistenteObj);
 }
 
+function registrarAsistencia(platica,hashAlumno){
+    nuevo = {};
+    paseDeAsistencia[platica] = true;
+    instance.actualizarUno("asistentes","hash",hashAlumno,paseDeAsistencia);
+}
+
 module.exports = {
-    agregarNuevoAsistente:agregarNuevoAsistente
+    agregarNuevoAsistente:agregarNuevoAsistente,
+    registrarAsistencia:registrarAsistencia
 }
