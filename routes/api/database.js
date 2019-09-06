@@ -50,4 +50,5 @@ app.put('/registrarAsistencia',(req,res)=>{
     db.registrarAsistencia(req.body['Platica'],req.bod['Hash']);
     res.send("Registrado con exito");
 });
+
 module.exports = app;
