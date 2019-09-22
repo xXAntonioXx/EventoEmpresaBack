@@ -25,8 +25,6 @@ function enviarMail(direccion,nombre,hash){
         if(err){
             console.log("sucedio un error al enviar mail");
             console.log(err);
-        }else{
-            console.log("revisa la bandeja de outlook");
         }
     });
 }
