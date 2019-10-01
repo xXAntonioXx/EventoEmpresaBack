@@ -10,7 +10,6 @@
 
 </head>
 
-
 <header>
 
   <div class="menu_bar">
@@ -19,10 +18,10 @@
 
   <nav>
     <ul>
-      <li style="background-color: #23BB04"><a href="#registro"><span class="icon-profile"></span>Registrarse</a></li>
+      <li style="background-color: #23BB04"><a href="#RegistrarAsistencia"><span class="icon-profile"></span>Registrarse</a></li>
       <li><a href="#banner"><span class="icon-home3"></span>Inicio</a></li>
       <li><a href="#fecha"><span class="icon-calendar"></span>Fecha del Evento</a></li>
-      <li><a href="#empresas"><span class="icon-user-tie"></span>Colaboradores</a></li>
+      <li><a href="#empresas"><span class="icon-user-tie"></span>Empresas Participantes</a></li>
       <li><a href="#horario"><span class="icon-clock"></span>Horario</a></li>
       <li><a href="#Contacto"><span class="icon-address-book"></span>Contacto</a></li>
     </ul>
@@ -32,7 +31,7 @@
 <body>
 
   <div id="banner" style="text-align: center">
-    <img src="Imagenes//Fondo de presentacion.jpg" alt="Imagen del evento" class="ImagenEvento"
+    <img src="Imagenes//banner.jpg" alt="Imagen del evento" class="ImagenEvento"
       style="margin-top: 50px">
   </div>
   </header>
@@ -85,7 +84,7 @@
         <p>CORREO</p>
       </div>
       <div class="a"><img src="Imagenes//CISCO.png" width="250" title="SSISchafer." alt="logotipo">
-        <p>CORREO</p>
+        <p>CISCO</p>
       </div>
       <div class="a"><img src="Imagenes//CAFFENIO.jpg" width="250" title="SSISchafer." alt="logotipo">
         <p>CAFFENIO</p>
@@ -121,10 +120,16 @@
       <p>Culturales</p>
     </div>
     <div class="caja2">
-      <div class="a"><img src="Imagenes//ArmaBlanca.jpg" width="250" title="ArmaBlanca." alt="logotipo">
+      <div class="a">
+        <a href="https://www.youtube.com/watch?v=dluqIgGFGb4&feature=youtu.be&fbclid=IwAR3nbYlmQmQ1PjG4zGOg1fcl2O279A6-NU0Y4vVg-wL5y7nG0cMoUmco2_E" target="_blank">
+          <img src="Imagenes//ArmaBlanca.jpg" width="250" title="ArmaBlanca." alt="logotipo">
+        </a> 
         <p>ArmaBlanca</p>
       </div>
-      <div class="a"><img src="Imagenes//JorgeSoto.jpg" width="250" title="JorgeSoto." alt="logotipo">
+      <div class="a">
+        <a href="https://soundcloud.com/jorgesotodj/01-house-mix-chapter-ii?fbclid=IwAR2VQFBPWWzrC8YCU6LrRJbbJzt1r-qmuSVz28k67au43pcesLkIW7edDLM" target="_blank">
+          <img src="Imagenes//JorgeSoto.jpg" width="250" title="JorgeSoto." alt="logotipo">
+        </a>
         <p>Jorge Soto</p>
       </div>
     </div>
@@ -505,19 +510,29 @@
             <li>Temas: "Aplicación tecnológica: Mujeres Seguras"</li>
           </ul>
         </div>
+        <div class="Expositor">
+            <img src="Imagenes//Ricardo alonso.jpg" alt="Expositor" class="expo">
+            <ul class="datos">
+              <li>Nombre: Ing. Ricardo Alonso Rodríguez Galindo</li>
+              <li>Temas: "Adaptarte o..." Desde la idea hasta la venta</li>
+            </ul>
+          </div>
 
       </div>
     </div>
+  <div id="RegistrarAsistencia"></div>
   </div>
 
   <br></br>
-  <div class="txtregistro">
+  <div class="txtregistro" >
 
     <form id="registro" action="/nuevoRegistro" method="POST" onsubmit="return validation()">
       <div>
         <h2>Registrate.</h2>
+        <br/>
+        <p style="font-weight: lighter;width:100%;font-size:1.8em">se enviará un correo con un código QR , el cual deberás presentar antes de cada conferencia, curso  o evento.</p>
+        <br/>
       </div>
-
       <div><label for="nombre">Escribe tú nombre.</label>
         <input type="text" id="impNombre" name="Nombre" placeholder="Nombre completo.">
         <label id="NombreErr" style="color:red;display: none;">El nombre solo puede llevar letras</label>

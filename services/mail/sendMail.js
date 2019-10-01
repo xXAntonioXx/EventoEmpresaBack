@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 let mailOptions = {
     from: 'jose_antony11@hotmail.com',
     to: 'jose_antony11@hotmail.com',
-    subject: 'Registro de asistencia al encuentro de empresas para ing. en sistemas',
+    subject: 'Ticket de Registro al Encuemsi 2019',
     html: 'empty mail'
   };
 
