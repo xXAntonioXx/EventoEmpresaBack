@@ -4,13 +4,13 @@ const emailTemplate = require('./readingTemplate');
 const transporter = nodemailer.createTransport({
     service:'SendGrid',
     auth:{
-        user:'joseMunguia',
-        pass:'Discord1sg'
+        user:'AntonioGonzalez',
+        pass:'Discord1sg2'
     }
 });
 
 let mailOptions = {
-    from: 'rocker4NT0N10@gmail.com',
+    from: 'jose_antony11@hotmail.com',
     to: 'jose_antony11@hotmail.com',
     subject: 'Registro de asistencia al encuentro de empresas para ing. en sistemas',
     html: 'empty mail'
