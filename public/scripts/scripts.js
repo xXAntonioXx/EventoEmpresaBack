@@ -1,7 +1,7 @@
 let url = window.location.href.split('?');
 redirectConfirm(url);
 
-var dias = ["lunes","martes","miercoles"];
+var dias = ["miercoles","jueves","viernes"];
 let d = new Date();
 
 
