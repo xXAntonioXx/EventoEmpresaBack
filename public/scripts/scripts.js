@@ -48,7 +48,7 @@ function redirectConfirm(url){
     parametrosArray.forEach(element => {
         let idError = element.split("=")[0]
         if(idError == "Enviado"){
-            alert("registro exitoso, revisa la bandeja de entrada de tu correo")
+            alert("registro exitoso, revisa la 'bandeja de entrada' o los 'correos no deseados' de tu correo");
         }
         console.log(idError);
         document.getElementById(idError).style.display = "inline";
