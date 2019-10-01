@@ -42,7 +42,7 @@ app.post('/nuevoRegistro',[
     mail.enviarMail(correo,nombre,hash);
     db.agregarNuevoAsistente(asistenteObjCadena,hash);
         
-    res.redirect('/');
+    res.redirect('/?Enviado=true');
     
 });
 
