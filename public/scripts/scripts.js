@@ -5,9 +5,9 @@ var dias = ["lunes","martes","miercoles"];
 let d = new Date();
 
 
-document.getElementById("lunes").style.display="none";
-document.getElementById("martes").style.display="none";
 document.getElementById("miercoles").style.display="none";
+document.getElementById("jueves").style.display="none";
+document.getElementById("viernes").style.display="none";
 
 document.getElementById("unisonForm").style.display = "none";
 
@@ -21,9 +21,9 @@ document.getElementById("CorreoFaltaErr").style.display = "none";
 document.getElementById("EdadFaltaErr").style.display = "none";
 
 function mostrarDia(diaNum){
-    document.getElementById("lunes").style.display="none";
-    document.getElementById("martes").style.display="none";
     document.getElementById("miercoles").style.display="none";
+    document.getElementById("jueves").style.display="none";
+    document.getElementById("viernes").style.display="none";
 
     document.getElementById(dias[diaNum-1]).style.display="grid";
 }

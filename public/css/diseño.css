@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 * {margin:0; padding:0; font-family:'Montserrat';}
 
-body {background:#EEEDED;}
+body {background:#535353;}
 
 .menu_bar{display: none;}
 
-
-header nav {width: 100%; background:#1C9E02;  position:fixed; opacity: 0.9;}
+header nav {width: 100%; background:#78B483;  position:fixed; opacity: 0.9;}
 header nav ul li span {margin-right: 5px}
 header nav ul li a:hover {background:#23BB04;}
 nav ul {list-style:none; margin:0;}
@@ -17,56 +16,71 @@ nav ul li a {padding:20px 20px; display:block; text-decoration: none; color:#fff
 
   header nav ul li{display: block; float: none; border-bottom:1px solid rgba(255,255,255, .3); width: 100%;}
 
-  .menu_bar{display: block; width: 100%; background:#1C9E02; opacity: .95; position: fixed;}
+  .menu_bar{display: block; width: 100%; background:#7ebd89; opacity: .95; position: fixed;}
 
   .menu_bar .boton-menu{display: block; margin: 0px; padding: 20px; color:#fff;text-decoration: none;font-size: 25px; font-family: 'Montserrat'}
 
   .menu_bar span {float: right; font-size: 40px;}
 }
 
-
-
-.dias li {color:#fff; background:#072EBF; float:left; width: 18%; border:2px solid #fff; }
-.dias li {margin: 0% 0.49999% ; max-width: 20%; overflow:hidden;}
+.dias li {color:#fff; background:#072EBF; float:left; width: 32%; border:2px solid #fff;}
+.dias li {overflow:hidden; margin: 0% 0.15%; max-width: 32%}
 .dia {color:#fff; background: #072EBF; padding: 10px 10px; width: 100%; text-align: center; font-family: 'Montserrat', sans-serif; display: inline-block;}
 .dia:active {background:#2852F0;}
 
 .ImagenEvento {width: 100%; height: auto;}
-.fecha {background:#05fe7e; color:#fff; margin:5% 0px; border:2px solid #fff; padding:5% 10%; text-align:center; font-family:'Montserrat';}
-.A {background:#05fe7e; font-family: 'Montserrat';}
+.fecha {background:#7ebd89; color:#fff; margin:5% 0px; border:2px solid #fff; padding:5% 10%; text-align:center; font-family:'Montserrat';}
+.A {background:#7ebd89; font-family: 'Montserrat'; color:#fff; border:2px solid #fff;}
+.B {background:#7ebd89; font-family: 'Montserrat'; color:#fff; border:2px solid #fff;}
+.C {background:#7ebd89; font-family: 'Montserrat'; color:#fff; border:2px solid #fff;}
 
 .caja2 {display: grid; grid-template-columns:auto auto auto; justify-content:space-evenly;}
-.caja2 img {border:2px solid grey; width:70%; box-shadow:0px 0px 10px black; margin-left:15%; margin-right:15%;}
-.caja2 p {text-align:center; color:#000000;}
+.caja2 img {border:2px solid grey; width:80%; box-shadow:0px 0px 10px black; margin-left:10%; margin-right:10%;}
+.caja2 .a {align-self: center; border:0px}
+.caja2 p {text-align:center; align-self: end;}
+.HoraTaller{text-align: center;background: #436449; font-size: 175%}
 
-.caja3 {background:#072EBF; color:#fff; border:2px solid #fff;}
+.caja3 {background:#897ebd; color:#fff; border:2px solid #fff;}
 .caja3 h1 {text-align:center; border:2px solid #fff;}
 .caja3 table div {color:#fff; border:2px solid #fff; padding:20px 80px;}
+.programa h1 {background: #6C6494;}
+input[ type="button"] {background: #6C6494;}
 
-.cajaD {display:grid; grid-template-columns: auto auto auto;}
+.cajaD {display:grid; grid-template-columns: 90px auto auto;}
 .cajaD div {border:2px solid #fff;}
-.cajaD .Ho, .Co, .Ta {background:#2852F0; text-align:center; font-family: 'Montserrat';}
-.cajaD .d {display:grid; grid-template-columns: auto auto auto; font-family: 'Montserrat';}
-.cajaD .horario {font-family: 'Montserrat';}
+.cajaD .Ho, .Co, .Ta {background: #6C6494; text-align:center; font-family: 'Montserrat';}
+.cajaD .d {font-family: 'Montserrat';background: #6C6494; text-align: left;}
+.cajaD .horario {font-family: 'Montserrat'; background: #6C6494;}
+.cajaD p {margin: 0% 0%}
 
-.Exp {background: #D50720; border: 2px solid #D2CBCB;}
-.expositores {background: #6240FD; display: grid; grid-template-columns: auto auto auto;}
-.datos, .expo{overflow:hidden; float:left; max-width: 50%;}
-div img {border: 2px solid #DBDBDD;}
+.Exp {background: #7ebd89; border: 2px solid #D2CBCB;}
+.expositores {
+  background: #6C6494; 
+  display: grid; 
+  grid-template-columns: auto auto auto;
+}
+.Expositor{display: block;text-align: center}
+.Expositor img {width: 200px; height: 200px;}
+
+.expo{overflow:hidden; max-width: 100%;border-radius: 50%;}
+div img {border: 2px solid #DBDBDD; background: white;}
 div .TiEx {color: #fff;}
 
-form {background:#B4D9F3; width: 55%; border: 2px solid #5196F9;}
 label {}
-input[ type="submit"] {width: 60%; background: #fff; position: relative;}
+input[ type="submit"] {margin: 10px ;width: 30%; background: #6C6494; position: relative; border: 2px solid #5E5780; color: #fff;}
+input[ type= checkbox] {width: 17px; height: 17px}
+.txtregistro {background:#897ebd; color: #fff; width: 55%; border: 2px solid #897ebd;margin-left: 20px;}
 
-.Contacto {background: #0EDE53; border: 2px solid #0EAFDE; overflow:hidden; }
-.Contacto img {float: left;}
-.Contacto ul li {overflow:hidden; max-width: 100%;}
+
+.Contacto {background: #7ebd89; border: 2px solid #7ebd89; overflow:hidden; color: #fff; border:2px solid #fff;}
+.Contacto img {float: left; width: 15%}
+.Contacto ul li {overflow:hidden; max-width: 100%; font-size: 115%}
+
 
 h1 {text-align:center;}
 
 div, h1 {padding:10px 10px;}
 
-.footer {background: #000000; color: #fff;}
+.footer {background: black; color: #fff;}
 
 p {margin:10px 10px;}
