@@ -57,7 +57,7 @@ input[ type="button"] {background: #6C6494;}
 .expositores {
   background: #6C6494; 
   display: grid; 
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .Expositor{display: block;text-align: center}
 .Expositor img {width: 200px; height: 200px;}

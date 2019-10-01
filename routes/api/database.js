@@ -30,19 +30,20 @@ app.post('/nuevoRegistro',[
         let urlConErrores = `/?${erroresEncontrados}`
         res.redirect(urlConErrores);
 
+    }else{
+        let correo = req.body['Correo'];
+        let nombre = req.body['Nombre'];
+        let dependencia = req.body['Dependencia'];
+        let asistenteObjCadena = JSON.stringify(req.body);
+            
+        let encryptObject = `${nombre}|${correo}|${dependencia}`;
+        let hash = bcrypt.hashSync(encryptObject,5);
+    
+        mail.enviarMail(correo,nombre,hash);
+        db.agregarNuevoAsistente(asistenteObjCadena,hash);
+            
+        res.redirect('/?Enviado=true');
     }
-    let correo = req.body['Correo'];
-    let nombre = req.body['Nombre'];
-    let dependencia = req.body['Dependencia'];
-    let asistenteObjCadena = JSON.stringify(req.body);
-        
-    let encryptObject = `${nombre}|${correo}|${dependencia}`;
-    let hash = bcrypt.hashSync(encryptObject,5);
-
-    mail.enviarMail(correo,nombre,hash);
-    db.agregarNuevoAsistente(asistenteObjCadena,hash);
-        
-    res.redirect('/?Enviado=true');
     
 });
 
