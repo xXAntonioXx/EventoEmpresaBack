@@ -23,7 +23,13 @@ nav ul li a {padding:20px 20px; display:block; text-decoration: none; color:#fff
   .menu_bar span {float: right; font-size: 40px;}
 }
 
-.dias li {color:#fff; background:#072EBF; float:left; width: 32%; border:2px solid #fff;}
+.dias li {color:#fff; 
+  /* background:#072EBF; */
+  float:left; width: 32%;
+  text-align: center; 
+  list-style-type: none;
+  /* border:2px solid #fff; */
+}
 .dias li {overflow:hidden; margin: 0% 0.15%; max-width: 32%}
 .dia {color:#fff; background: #072EBF; padding: 10px 10px; width: 100%; text-align: center; font-family: 'Montserrat', sans-serif; display: inline-block;}
 .dia:active {background:#2852F0;}
