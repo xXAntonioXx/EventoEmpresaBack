@@ -20,12 +20,19 @@ document.getElementById("NombreFaltaErr").style.display =  "none";
 document.getElementById("CorreoFaltaErr").style.display = "none";
 document.getElementById("EdadFaltaErr").style.display = "none";
 
+mostrarDia(1);
+
 function mostrarDia(diaNum){
     document.getElementById("miercoles").style.display="none";
     document.getElementById("jueves").style.display="none";
     document.getElementById("viernes").style.display="none";
 
+    document.getElementById(1).style.backgroundColor = "white"
+    document.getElementById(2).style.backgroundColor = "white"
+    document.getElementById(3).style.backgroundColor = "white"
+
     document.getElementById(dias[diaNum-1]).style.display="grid";
+    document.getElementById(diaNum).style.backgroundColor = "#7ebd89"
 }
 
 function mostrarPreguntas(value){
