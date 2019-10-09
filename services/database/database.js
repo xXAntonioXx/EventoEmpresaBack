@@ -7,10 +7,10 @@ function agregarNuevoAsistente(bodyRequest,hash){
     instance.insertarUno('asistentes',asistenteObj);
 }
 
-function registrarAsistencia(platica,hashAlumno){
+function registrarAsistencia(platica,hashAlumno,hora){
     nuevo = {};
     paseDeAsistencia = {}
-    paseDeAsistencia[platica] = true;
+    paseDeAsistencia[platica] = hora;
     instance.actualizarUno("asistentes","hash",hashAlumno,paseDeAsistencia);
 }
 
