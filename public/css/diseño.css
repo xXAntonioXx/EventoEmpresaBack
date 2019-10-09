@@ -72,7 +72,7 @@ input[ type="button"] {background: #6C6494;}
 div img {border: 2px solid #DBDBDD; background: white;}
 div .TiEx {color: #fff;}
 
-label {}
+/* label {} */
 input[ type="submit"] {margin: 10px ;width: 30%; background: #6C6494; position: relative; border: 2px solid #5E5780; color: #fff;}
 input[ type= checkbox] {width: 17px; height: 17px}
 .txtregistro {background:#897ebd; color: #fff; width: 55%; border: 2px solid #897ebd;margin-left: 20px;}

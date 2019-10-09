@@ -52,4 +52,10 @@ app.put('/registrarAsistencia',(req,res)=>{
     res.send("Registrado con exito");
 });
 
+app.post('/registrarConExpediente',(req,res)=>{
+    db.registrarAsistenciaExpediente(req.body['Platica'],req.body['Expediente'],req.body['Hora']);
+    console.log(req.body)
+    res.redirect('/registro');
+});
+
 module.exports = app;

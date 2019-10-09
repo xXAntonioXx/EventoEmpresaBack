@@ -10,4 +10,10 @@ app.get('/',(req,res)=>{
     //res.render(ruta);
 });
 
+app.get('/registro',(req,res)=>{
+    let ruta = path.join(__dirname+'/../views/registro.html');
+    res.sendFile(ruta);
+    //res.render(ruta);
+});
+
 module.exports = app;
