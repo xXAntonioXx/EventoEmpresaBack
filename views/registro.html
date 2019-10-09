@@ -9,13 +9,13 @@
                 <option value="TCA">TCA</option>
         </select><br/><br/>
         <input type="text" id="Expediente" name="Expediente" placeholder="aquí el expediente"/><br/><br/>
-        <input type="text" id="Hora" name="Hora" placeholder="aquí pones la hora"/><br/><br/>
+        <input type="text" id="Hora" name="Hora" placeholder="no tocar"/><br/><br/>
         <input type="submit" />
     </form>
     <script>
         function hora(){
             let d = new Date();
-            document.getElementById("Hora").value=d.getHours();
+            document.getElementById("Hora").value= d.getHours() +":"+ d.getMinutes();
             return true;
         }
     </script>
