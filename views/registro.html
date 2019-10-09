@@ -1,16 +1,16 @@
-<html>
-    <form id="Registro" action="/registrarConExpediente" method="POST" onsubmit="return hora()">
+<html style=>
+    <form id="Registro" action="/registrarConExpediente" method="POST" onsubmit="return hora()" style="text-align: center;width:100%;height: 100%;">
         <label for="Platica" style="font-size:50px">Platica:</label>
-        <select name="Platica" id="Platica" style="height: 30px;">
+        <select name="Platica" id="Platica" style="height: 5%;width: 40%; font-size: 30px" class="Platica">
                 <option value="Waze">Waze</option>
                 <option value="Trabajar_En_Pijamas">Trabajar_En_Pijamas</option>
                 <option value="FarmEase">FarmEase</option>
                 <option value="In_Blockchain_We_Trust">In_Blockchain_We_Trust</option>
                 <option value="TCA">TCA</option>
         </select><br/><br/>
-        <input type="tel" id="Expediente" name="Expediente" placeholder="aquí el expediente"/><br/><br/>
-        <input type="text" id="Hora" name="Hora" placeholder="no tocar"/><br/><br/>
-        <input type="submit" />
+        <input type="tel" id="Expediente" name="Expediente" placeholder="aquí el expediente" style="width: 60%;height:5%;font-size:40px"/><br/><br/><br/><br/>
+        <input type="text" id="Hora" name="Hora" placeholder="no tocar"  style="width: 60%;height:5%;font-size:40px"/><br/><br/>
+        <input type="submit" style="height: 10%;width:30%;font-size:40px"/>
     </form>
     <script>
         function hora(){
