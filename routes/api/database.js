@@ -54,8 +54,13 @@ app.post('/registrarAsistencia',(req,res)=>{
 
 app.post('/registrarConExpediente',(req,res)=>{
     db.registrarAsistenciaExpediente(req.body['Platica'],req.body['Expediente'],req.body['Hora']);
-    console.log(req.body)
     res.redirect('/registro');
+});
+
+app.post('/registrarSinQR',(req,res)=>{
+    //db.registrarAsistenciaExpediente(req.body['Platica'],req.body['Expediente'],req.body['Hora']);
+    db.registrarSinQR(req.body['Expediente'],req.body['Platica'],req.body['Hora']);
+    res.redirect('/registroSinQR');
 });
 
 module.exports = app;

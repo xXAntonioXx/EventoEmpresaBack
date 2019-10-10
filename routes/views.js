@@ -7,13 +7,16 @@ app.use(express.static('public'));
 app.get('/',(req,res)=>{
     let ruta = path.join(__dirname+'/../views/index.html');
     res.sendFile(ruta);
-    //res.render(ruta);
 });
 
 app.get('/registro',(req,res)=>{
     let ruta = path.join(__dirname+'/../views/registro.html');
     res.sendFile(ruta);
-    //res.render(ruta);
+});
+
+app.get('/registroSinQR',(req,res)=>{
+    let ruta = path.join(__dirname+'/../views/registrarNoRegistrado.html');
+    res.sendFile(ruta);
 });
 
 module.exports = app;

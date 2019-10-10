@@ -1,0 +1,25 @@
+<html style=>
+    <label style="width: 100%;height: 15%; font-size: 50px;">Registro por primera vez sin QR</label>
+    <form id="Registro" action="/registrarSinQR" method="POST" onsubmit="return hora()" style="text-align: left;width:100%;height: 100%;">
+        <label for="Platica" style="font-size:50px">Platica:</label>
+        <select name="Platica" id="Platica" style="height: 5%;width: 40%; font-size: 30px" class="Platica">
+                <option value="La industria del software">La industria del software</option>
+                <option value="Ciberseguridad en Sonora">Ciberseguridad en Sonora</option>
+                <option value="relax">relax</option>
+                <option value="Schaefer">SSI Schaefer</option>
+                <option value="Caffenio">Caffenio</option>
+                <option value="Secretaría">S5-Secretaría</option>
+                <option value="CISCO">CISCO</option>
+        </select><br/><br/>
+        <input type="tel" id="Expediente" name="Expediente" placeholder="aquí el expediente" style="width: 60%;height:5%;font-size:40px"/><br/><br/><br/><br/>
+        <input type="text" id="Hora" name="Hora" placeholder="no tocar"  style="width: 60%;height:5%;font-size:40px"/><br/><br/>
+        <input type="submit" style="height: 10%;width:30%;font-size:40px"/>
+    </form>
+    <script>
+        function hora(){
+            let d = new Date();
+            document.getElementById("Hora").value= d.getHours() +":"+ d.getMinutes();
+            return true;
+        }
+    </script>
+</html>

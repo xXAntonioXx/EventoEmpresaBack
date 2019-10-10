@@ -8,21 +8,29 @@ function agregarNuevoAsistente(bodyRequest,hash){
 }
 
 function registrarAsistencia(platica,hashAlumno,hora){
-    nuevo = {};
-    paseDeAsistencia = {}
+    //let nuevo = {};
+    let paseDeAsistencia = {}
     paseDeAsistencia[platica] = hora;
     instance.actualizarUno("asistentes","hash",hashAlumno,paseDeAsistencia);
 }
 
 function registrarAsistenciaExpediente(platica,expediente,hora){
-    nuevo = {};
-    paseDeAsistencia = {}
+    //let nuevo = {};
+    let paseDeAsistencia = {}
     paseDeAsistencia[platica] = hora;
     instance.actualizarUno("asistentes","Expediente",expediente,paseDeAsistencia);
+}
+
+function registrarSinQR(expediente,platica,hora){
+    let nuevoReg = {};
+    nuevoReg['Expediente'] = expediente;
+    nuevoReg[platica] = hora;
+    instance.insertarUno("asistentes",nuevoReg);
 }
 
 module.exports = {
     agregarNuevoAsistente:agregarNuevoAsistente,
     registrarAsistencia:registrarAsistencia,
-    registrarAsistenciaExpediente:registrarAsistenciaExpediente
+    registrarAsistenciaExpediente:registrarAsistenciaExpediente,
+    registrarSinQR:registrarSinQR
 }
