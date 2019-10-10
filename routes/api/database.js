@@ -48,7 +48,7 @@ app.post('/nuevoRegistro',[
 });
 
 app.post('/registrarAsistencia',(req,res)=>{
-    db.registrarAsistencia(req.body['Platica'],req.body['Hash'],req.body['hora']);
+    db.registrarAsistencia(req.body['Platica'],req.body['Hash'],req.body['Hora']);
     res.send("Registrado con exito");
 });
 
