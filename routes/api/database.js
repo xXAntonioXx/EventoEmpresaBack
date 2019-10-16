@@ -4,6 +4,7 @@ const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const mail = require('../../services/mail/sendMail');
 const db = require('../../services/database/database');
+const config = require('../../lib/config');
 
 const app = express.Router();
 
@@ -37,7 +38,7 @@ app.post('/nuevoRegistro',[
         let asistenteObjCadena = JSON.stringify(req.body);
             
         let encryptObject = `${nombre}|${correo}|${dependencia}`;
-        let hash = bcrypt.hashSync(encryptObject,5);
+        let hash = bcrypt.hashSync(encryptObject,config.HASH_SALT);
     
         mail.enviarMail(correo,nombre,hash);
         db.agregarNuevoAsistente(asistenteObjCadena,hash);
